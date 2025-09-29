@@ -15,7 +15,7 @@ interface UserResponse {
 
 const User = () => {
 
-    const [user, setUser] = useState<UserData | null>(null);
+    const [user, setUser] = useState<UserResponse | null>(null);
 
     useEffect(() => {
         // Assuming you have a stored JWT after a successful login
@@ -33,7 +33,7 @@ const User = () => {
         axiosInstance.get('/api/users/1')
         .then(response => {
             console.log('Data:', response.data);
-            setUser(response.data)
+            setUser(response.data);
         })
         .catch(error => {
             console.error('Error:', error);
