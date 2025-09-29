@@ -40,29 +40,30 @@ const Login: React.FC = () =>{
 
     return(
         <div>
-        <h2>Login</h2>
-        <h3>Must use this email: eve.holt@reqres.in  </h3>
-        <h4>The password can be anything</h4>
-        <form onSubmit={handleLogin}>
-            <div>
-            <label htmlFor="username">Username:</label>
-            <input type="text" id="username" value={email} 
-                onChange={(e) => setEmail(e.target.value)} />
-            </div>
-            <div>
-            <label htmlFor="password">Password:</label>
-            <input type="password" id="password" value={password} 
-                onChange={(e) => setPassword(e.target.value)} />
-            </div>
-            <button type="submit">Login</button>
-        </form>
-        <button onClick={logoutUser}>Logout</button>
-        {token &&
-            <User />
-        }  
-        
+            <h2>Login</h2>
+            <h3>Must use this email: eve.holt@reqres.in  </h3>
+            <h4>The password can be anything</h4>
+            <form onSubmit={handleLogin}>
+                <div>
+                    <label htmlFor="username">Username:</label>
+                    <input type="text" id="username" value={email} 
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="password">Password:</label>
+                    <input type="password" id="password" value={password} 
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <button onClick={logoutUser}>Logout</button>
+            {token &&
+                <User />
+            }  
         </div>
     );
-}
+};
 
 export default Login;
